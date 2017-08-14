@@ -1,15 +1,18 @@
 import React from 'react';
-
+import CSSModules from 'react-css-modules';
+import styles from '../styles/card.css';
 class Cards extends React.Component{
     render(){
-        <div>
-            <img src={require('../images/Hedgehog.png')} />
-        </div>
+        return (
+            <div>
+                <img src={require('../images/Hedgehog.png')} />
+            </div>
+        )
     }
 }
 
 const App=()=>(
-    <div>
+    <div className={styles.container}>
         <Cards />
     </div>
 )
