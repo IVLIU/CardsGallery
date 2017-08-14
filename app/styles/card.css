@@ -1,12 +1,27 @@
 @charset 'utf-8';
 
 .img{
+    margin-top: 100px;
     width: 200px;
 }
-.card{
+.title{
+    margin-top: 200px;
+    color: #666666;
+}
+.card_style{
+    margin: 5% 5%;
+    border-radius: 16px;
+    background-color: #E3D8D1; 
     text-align: center;
-    width: 600px;
-    height: 400px;
+    width: 90%;
+    height: 90%;
+}
+.card{
+    float: left;
+    background-color: #454443;
+    text-align: center;
+    width: 33.33333%;
+    height: 100%;
 }
 .container{
     width: 300%;
