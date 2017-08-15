@@ -8,6 +8,15 @@
     margin-top: 200px;
     color: #666666;
 }
+.icon_close{
+    width: 46px;
+}
+.icon_add{
+    position: fixed;
+    left: 300px;
+    top: 590px;
+    width: 60px;
+}
 .card_style{
     margin: 5% 5%;
     border-radius: 16px;
@@ -23,6 +32,7 @@
     width: 33.33333%;
     height: 100%;
 }
+
 .container{
     width: 300%;
     height: 100%;
