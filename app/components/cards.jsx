@@ -1,6 +1,7 @@
 import React from 'react';
 import Hammer from 'react-hammerjs';
 import styles from '../styles/card.css';
+import getData from '../scripts/fetch.js';
 class Cards extends React.Component{
     static defaultProps={
         url:'',
@@ -93,30 +94,70 @@ class Container extends React.Component{
     }
 }
 
-// const App=()=>(
-//     <Container>
-//         <Cards id='buck' url={require('../images/buck.png')} title='BUCK' />
-//         <Cards id='hedgehog' url={require('../images/Hedgehog.png')} title='HEDGEHOG' />
-//         <Cards id='hippo' url={require('../images/Hippo.png')} title='HIPPO' />
-//     </Container>
-// );
+// class App extends React.Component{
+//     constructor(props){
+//         super(props);
+//         this.state={
+//             style:{
+//                 width:'300%',
+//                 position: 'absolute',
+//                 left: '0%',
+//                 top: '0%',
+//             }
+//         }
+//     }
+//     handleSwipeLeft(ev){
+//         const {style}=this.state;
+//         let _num=Number(style.left.slice(0,style.left.length-1));
+//         if(ev.direction === 2 && _num>-200){
+//             this.setState({
+//                 style:Object.assign({},this.state.style,{left:(_num+=-100)+'%'})
+//             });
+//         }
+//         if(ev.direction === 4 && _num<0){
+//             this.setState({
+//                 style:Object.assign({},this.state.style,{left:(_num-=-100)+'%'})
+//             });
+//         }
+//     }
+//     render(){
+//         return (
+//             <Hammer onSwipe={ev=>this.handleSwipeLeft(ev)}>
+//                 <div style={this.state.style} className={styles.container} ref={ref=>this.container=ref}>
+//                     {
+//                         getData('./sourceData/data.json')
+//                         .then(item=>{
+//                             <Cards url={require(item.src)} title={item.title} />
+//                         })
+//                     }
+//                     <img className={styles.icon_add} src={require('../images/add.png')} />
+//                 </div>
+//             </Hammer>
+//         );
+//     }
+// }
 
-class App extends React.Component{
-    getSource(){
-        fetch('../sourceData/data.json')
-        .then(response=>response.json())
-        .then(source=>source.map(item=>item.isActive))
-        .catch(err=>console.error(err));
-    }
-    render(){
-        return (
-            <Container>
-                <Cards id='buck' url={require('../images/buck.png')} title='BUCK' />
-                <Cards id='hedgehog' url={require('../images/Hedgehog.png')} title='HEDGEHOG' />
-                <Cards id='hippo' url={require('../images/Hippo.png')} title='HIPPO' />
-            </Container>
-        );
-    }
-}
+const App=()=>(
+    <Container>
+        <Cards id='buck' url={require('../images/buck.png')} title='BUCK' />
+        <Cards id='hedgehog' url={require('../images/Hedgehog.png')} title='HEDGEHOG' />
+        <Cards id='hippo' url={require('../images/Hippo.png')} title='HIPPO' />
+    </Container>
+);
+
+// class App extends React.Component{
+//     render(){
+//         return (
+//             <Container>
+//                 {
+//                     getData('./sourceData/data.json')
+//                     .then(item=>{
+//                         <Cards url={require(item.src)} title={item.title} />
+//                     })
+//                 }
+//             </Container>
+//         );
+//     }
+// }
 
 export default App;
