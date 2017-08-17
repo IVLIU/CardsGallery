@@ -79,7 +79,7 @@ class Container extends React.Component{
         }
     }
     componentDidMount(){
-        console.info(this.props.children);
+        console.info('children',this.props.children);
     }
     render(){
         return (
@@ -97,35 +97,26 @@ class Container extends React.Component{
     }
 }
 
-// const App=()=>(
-//     <Container>
-//         <Cards id='buck' url={require('../images/buck.png')} title='BUCK' />
-//         <Cards id='hedgehog' url={require('../images/Hedgehog.png')} title='HEDGEHOG' />
-//         <Cards id='hippo' url={require('../images/Hippo.png')} title='HIPPO' />
-//     </Container>
-// );
-let arr=[12,13,14];
-// class App extends React.Component{
-//     render(){
-//         return (
-//             <Container>
-//                 {
-//                     [getData('./sourceData/data.json')].map(promise=>{
-//                         promise.then(arr=>{
-//                             arr.map((item,index)=>{
-//                                 //console.info(`index:${index},item:${item.src}`);
-//                                 return <h1>Hello World</h1>
-//                             })
-//                         })
-//                     })
-//                 }
-//             </Container>
-//         );
-//     }
-// }
-
 class App extends React.Component{
-     
+     render(){
+        return (
+            <Container>
+                {
+                    console.log(
+                        'back: ',
+                        [getData('./sourceData/data.json')].map(promise=>{    
+                            return promise.then(arr=>{
+                                //console.log(arr);
+                                arr.map(item=>{
+                                    return item;
+                                })
+                            })
+                        })
+                    )
+                }
+            </Container>
+        )
+     }
 }
 
 

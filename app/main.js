@@ -4,7 +4,7 @@ import App from './components/cards.jsx';
 import getData from './scripts/fetch.js';
 console.log(
     
-    getData('./sourceData/data.json')
+    //getData('./sourceData/data.json')
    
 );
 ReactDOM.render((
