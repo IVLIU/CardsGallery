@@ -27,6 +27,7 @@
     "immutable": "^3.8.1",
     "less-loader": "^4.0.5",
     "react": "^15.6.1",
+    "react-addons": "^0.9.1-deprecated",
     "react-css-modules": "^4.6.0",
     "react-dom": "^15.6.1",
     "react-hammerjs": "^0.5.0",

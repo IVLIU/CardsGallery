@@ -78,9 +78,6 @@ class Container extends React.Component{
             });
         }
     }
-    componentDidMount(){
-        console.info('children',this.props.children);
-    }
     render(){
         return (
             <Hammer onSwipe={ev=>this.handleSwipeLeft(ev)}>
@@ -102,17 +99,17 @@ class App extends React.Component{
         return (
             <Container>
                 {
-                    console.log(
-                        'back: ',
-                        [getData('./sourceData/data.json')].map(promise=>{    
-                            return promise.then(arr=>{
-                                //console.log(arr);
-                                arr.map(item=>{
-                                    return item;
-                                })
-                            })
-                        })
-                    )
+                    // console.log(
+                    //     'back: ',
+                    //     [getData('./sourceData/data.json')].map(promise=>{    
+                    //         return promise.then(arr=>{
+                    //             //console.log(arr);
+                    //             arr.map(item=>{
+                    //                 return item;
+                    //             })
+                    //         })
+                    //     })
+                    // )
                 }
             </Container>
         )
