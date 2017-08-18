@@ -93,28 +93,48 @@ class Container extends React.Component{
         );
     }
 }
-
-class App extends React.Component{
-     render(){
+//let App=null;
+getData('./sourceData/data.json').then(arr=>{
+    App=()=>{
         return (
             <Container>
                 {
-                    // console.log(
-                    //     'back: ',
-                    //     [getData('./sourceData/data.json')].map(promise=>{    
-                    //         return promise.then(arr=>{
-                    //             //console.log(arr);
-                    //             arr.map(item=>{
-                    //                 return item;
-                    //             })
-                    //         })
-                    //     })
-                    // )
+                    arr.map(item=>{
+                        console.log(item);
+                    })
                 }
             </Container>
-        )
-     }
-}
+        );
+    }
+})
+
+// class App extends React.Component{
+//      render(){
+//         getData('./sourceData/data.json').then(arr=>{
+//             return (
+//                 <Container>
+                    
+//                 </Container>
+//             );
+//         });
+//         return (
+//             <Container>
+//                 {
+//                     //要求是数组
+//                     getData('./sourceData/data.json')
+//                     .then(arr=>{
+//                         arr.map(item=>{
+//                             return <h1></h1>
+//                         })
+//                     })
+//                     // getData('./sourceData/data.json').map(item=>{
+//                     //     console.log(item);
+//                     // })
+//                 }
+//             </Container>
+//         )
+//      }
+// }
 
 
 export default App;

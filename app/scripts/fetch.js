@@ -1,31 +1,70 @@
 import "babel-polyfill";
+import immutable from 'immutable';
+console.log(immutable);
 console.info('fetch start');
 const getData=(url)=>{
-    //let arr=[];
+    let newArr=[];
     let header=new Headers();
     header.append('Accept','application/json');
     header.append('Content-Type','application/json');
     let req=new Request(url,{headers:header});
-    return function*(){
-        yield fetch(req)
+    //return function*(){
+        return fetch(req)
         .then(response=>{
             return response.json();
         })
         .then(data=>data.filter(item=>{
             if(item.isActive){
-                let arr=[];
-                return arr.push(Object.assign({},item));
-                //return arr.push(item);
-                //return new Promise((resolve,reject)=>{
-                //    resolve(arr.push(item));
-                //})
-                //.catch(err=>reject(err));
+                return item;
             }
-            
         }))
+        .then(arr=>{
+            newArr=arr.slice();
+        })
         .catch(err=>console.error(err));
-        //yield arr;
-    }
+        return newArr;
+    //}
 }
+
+// const getData=function*(url){
+//     let newArr=[];
+//     let header=new Headers();
+//     header.append('Accept','application/json');
+//     header.append('Content-Type','application/json');
+//     let req=new Request(url,{headers:header});
+//     yield fetch(req)
+//     .then(response=>{
+//         return response.json();
+//     })
+//     .then(data=>data.filter(item=>{
+//         if(item.isActive){
+//             return item;
+//         }
+//     }))
+//     .then(arr=>{
+//         //console.log(arr);
+//         newArr=arr.slice();
+//         return newArr;
+//     })
+//     .catch(err=>console.error(err));
+//     yield newArr;
+// }
+
+// const getData=function*(url){
+//     let header=new Headers();
+//     header.append('Accept','application/json');
+//     header.append('Content-Type','application/json');
+//     let req=new Request(url,{headers:header});
+
+//     try{
+//         let response=yield fetch(req);
+//         //console.log(response);
+//         let resJson=yield response.json();
+//         console.log(resJson);
+//     }
+//     catch(err){
+//         console.error(`Oops, error: ${err}`)
+//     }
+// }
 console.info('fetch end');
 export default getData;
