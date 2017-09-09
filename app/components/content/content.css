@@ -1,0 +1,11 @@
+@charset 'utf-8';
+.component-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #eeeeee;
+    border-radius: 4px;
+    box-shadow: 6px 6px 6px #eeeeee;
+    height: 90%;
+    width: 90%;
+}

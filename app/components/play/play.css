@@ -1,0 +1,13 @@
+@charset 'utf-8';
+.play-container{
+    position: absolute;
+    top: 50%;
+    margin-top: -280px;
+    right: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 420px;
+    height: 560px;
+    border: 1px solid #000000;
+}

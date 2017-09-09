@@ -1,0 +1,33 @@
+@charset 'utf-8';
+body{
+    overflow: hidden;
+}
+.app-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: 'nav';
+}
+.app-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: 'content';
+}
+.app-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    grid-template-areas: 'nav content';
+}
+
+.app-button{
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    margin-top: -40px;
+}
